@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Profile</div>
+    <div class="panel-body">
+      <legend><i class="ion-clipboard"></i> Edit My Profile</legend>
+      <form method="post" ng-submit="updateProfile()">
+        <div class="form-group">
+          <label class="control-label">Profile Picture</label>
+          <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+        </div>
+        <div class="form-group">
+          <label class="control-label"><i class="ion-person"></i> First Name</label>
+          <input type="text" class="form-control" ng-model="user.first_name" />
+        </div>
+        <div class="form-group">
+          <label class="control-label"><i class="ion-person"></i> Last Name</label>
+          <input type="text" class="form-control" ng-model="user.last_name" />
+        </div>
+        <div class="form-group">
+          <label class="control-label"><i class="ion-person"></i> Sex</label>
+          <select> 
+          <option value="male" ng-model="user.sex">Male</option>
+          <option value="female" ng-model="user.sex">Female</option>
+        </select>
+        </div>
+        <div class="form-group">
+          <label class="control-label"><i class="ion-person"></i> Age</label>
+          <input type="number" class="form-control" ng-model="user.age" min="18" max="100" />
+        </div>
+        <button class="btn btn-lg btn-success">Add Information</button>
+      </form>
+    </div>
+  </div>
+
+  
+</div>

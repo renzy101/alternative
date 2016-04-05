@@ -1,0 +1,78 @@
+
+
+
+
+<div class="container" ng-controller="ModalDemoCtrl" ng-app="myApp">
+  <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3>Image Modal</h3>
+        </div>
+        <form ng-submit="submit()">
+          <div class="modal-body">
+            <label>Please Enter URL For Item</label>
+            <input type="text" ng-model="image.url" size="35" placeholder="url"/>
+
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+              <input type="submit" class="btn primary-btn" value="Submit" />
+          </div>
+        </form>
+    </script>
+    <script type="text/ng-template" id="imageSelect.html">
+    <form role="form" ng-submit="submit()" >
+        <div class="modal-header">
+            <h3>Select an Image</h3>
+        </div >
+        
+          <div class="modal-body">
+              <label for="">Please Click on your preferred image</label>
+          <div class="row">
+            <div data-ng-repeat="image in images track by $index" class="col-lg-3 col-md-4 col-xs-6">
+
+                        <div class = "thumbnail" style="height:250px;width:250px" data-ng-class="{imgborder : $index == row}">
+                            <img data-ng-src="{{ image }}" data-ng-click="getImgUrl($index)" style="max-height:100%;max-width:100%">
+                        </div>
+
+                    </div>
+
+            </div>
+
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+              <input type="submit" class="btn primary-btn" ng-click="hideDiv=true" value="Submit" />
+          </div>
+        </form>
+    </script>
+
+    <button class="btn" ng-click="open()">Open me to get thumbnail!</button>
+
+</div>
+</br>
+</br>
+<div class="container" >
+    
+    <form role="form" ng-submit="submit()"  ng-controller="form">
+    <div class = "thumbnail" style="height:250px;width:250px" data-ng-class="{imgborder : $index == row}">
+                    <img src="{{img}}" style="max-height:100%;max-width:100%">
+                </div>
+      <div class="form-group" >
+                    <label>Title</label>
+                     <input class="form-control" type="text" name="title" placeholder="Title" data-ng-model="title" min="1" max="5">
+                </div>
+       <div class="form-group" >
+                    <label>Description</label>
+                    <textarea class="form-control" rows="5" type="text" name="description" data-ng-model="description" placeholder="Description" maxlength="500"> </textarea>
+                </div>
+        <div class="form-group" >
+                <label>Priority</label>
+                <input class="form-control" type="number" name="priority" data-ng-model="priority" min="1" max="5">
+            </div>
+                <button type="submit"  ng-click="wishlist()" class="btn btn-primary">Add to Wishlist</button>
+
+
+            </form>
+        </div>
+

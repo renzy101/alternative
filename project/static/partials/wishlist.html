@@ -1,0 +1,25 @@
+ </div>
+<div class="container" ng-controller="WishCtrl">
+
+        <div class="panel panel-default">
+    <div class="panel-heading">Your WishList</div>
+    <button class="btn" ng-click='go()' style="position:relative; left:550px ;" >Add Item</button>
+    <div class="panel-body">
+        <div class="panel panel-default" ng-repeat="wish in wishes track by $index">
+                <div class = "thumbnail" style="height:250px;width:250px" data-ng-class="{imgborder : $index == row}">
+                    <a href="{{wish.url}}"><img src="{{wish.thumbnail}}" style="max-height:100%;max-width:100%"></a>
+                </div>
+                <div class="col-lg-6" >
+                    <span style="position: relative; left: 250px; top:-265px;"><a href="{{wish.url}}"><strong>Titile : {{wish.title}}</strong></a></span>
+                    <br>
+                    <span style="position: relative; left: 250px; top:-250px;">Description : {{wish.description}}</span>
+                    <br>
+                    <span style="position: relative; left: 250px; top:-240px;">Priority : {{wish.priority}}</span>
+                    <br>
+                    <span style="position: relative; left: 250px; top:-230px;">Added On : {{wish.added_on}}</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
